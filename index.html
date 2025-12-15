@@ -3,10 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제 포트폴리오입니다</title>
+    <title>hdo03072 - 개발자 포트폴리오</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="./script.js"></script>
 </head>
 <body>
-<h1>안녕하세요! 저는 hdo03072입니다.</h1>
-<p>이것은 GitHub Pages로 만든 저의 첫 번째 웹사이트입니다.</p>
+<header class="header">
+    <div class="container">
+        <h1 class="site-title">hdo03072</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#about">소개</a></li>
+                <li><a href="#skills">기술</a></li>
+                <li><a href="#projects">프로젝트</a></li>
+                <li><a href="#contact">연락</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="https://via.placeholder.com/150" alt="프로필 사진" class="profile-pic">
+                <h2 class="hero-title">안녕하세요, hdo03072입니다!</h2>
+                <p class="hero-description">
+                    저는 웹 개발자/프론트엔드 개발자/백엔드 개발자 (본인 분야) 입니다.
+                    사용자 경험을 개선하고, 효율적인 코드를 작성하는 것을 즐깁니다.
+                    새로운 기술 학습과 문제 해결에 항상 열정적입니다.
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/hdo03072" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <h2 class="section-title">소개</h2>
+            <p>
+                (여기에 본인의 상세한 소개를 작성해주세요.)<br>
+                예: 저는 [대학교/회사]에서 [기간] 동안 [경험]을 쌓았으며, [기술1], [기술2]를 활용한 프로젝트 경험이 풍부합니다.
+                특히 [어떤 분야]에 관심이 많고, [어떤 가치]를 중요하게 생각하며 개발에 임합니다.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="skills section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">기술 스택</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <p>HTML5</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt skill-icon"></i>
+                    <p>CSS3</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js-square skill-icon"></i>
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-react skill-icon"></i>
+                    <p>React</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-node-js skill-icon"></i>
+                    <p>Node.js</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-python skill-icon"></i>
+                    <p>Python</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects section-padding">
+        <div class="container">
+            <h2 class="section-title">주요 프로젝트</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <h3>프로젝트 1</h3>
+                    <p>프로젝트에 대한 간략한 설명입니다. 사용된 기술: React, Node.js</p>
+                    <a href="https://github.com/hdo03072/project1" target="_blank" class="project-link">GitHub Repository <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="project-item">
+                    <h3>프로젝트 2</h3>
+                    <p>또 다른 프로젝트에 대한 설명입니다. 사용된 기술: Python, Django</p>
+                    <a href="https://github.com/hdo03072/project2" target="_blank" class="project-link">GitHub Repository <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">연락처</h2>
+            <p>더 궁금한 점이 있으시다면 언제든지 연락 주세요!</p>
+            <p><i class="fas fa-envelope"></i> 이메일: your.email@example.com</p>
+            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="#" target="_blank">linkedin.com/in/yourprofile</a></p>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2023 hdo03072. All rights reserved.</p>
+    </div>
+</footer>
 </body>
 </html>
