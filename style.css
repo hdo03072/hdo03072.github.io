@@ -205,40 +205,115 @@ a:hover {
     color: #444;
 }
 
-/* Projects Section */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.project-item {
+/* --- Experience Section Styles --- */
+.experience-item {
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.experience-item:last-child {
+    margin-bottom: 0;
+}
+
+.experience-item h3.company-name {
+    color: #007bff;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.experience-item p.job-title {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 10px;
+}
+
+.job-description {
+    padding-left: 20px;
+    color: #444;
+}
+
+.job-description li {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+/* --- Accordion (Projects) Styles --- */
+.accordion-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
+    transition: background-color 0.2s;
+}
+
+.accordion-header:hover {
+    background-color: #f0f0f0;
+}
+
+.accordion-header h3 {
+    margin: 0;
+    color: #222;
+    font-size: 1.3em;
+    flex-grow: 1;
+}
+
+.tech-summary {
+    color: #007bff;
+    font-weight: 500;
+    font-size: 0.9em;
+    margin-left: 20px;
+    white-space: nowrap;
+}
+
+.accordion-header .icon {
+    margin-left: 20px;
     transition: transform 0.3s ease;
 }
 
-.project-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+.accordion-header[aria-expanded="true"] .icon {
+    transform: rotate(180deg);
 }
 
-.project-item h3 {
+.accordion-content {
+    padding: 0 20px;
+    background-color: #f9f9f9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.accordion-content[aria-expanded="true"] {
+    max-height: 1000px; /* 충분히 큰 값으로 설정 */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.accordion-content h4 {
     color: #007bff;
-    font-size: 1.8em;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    border-left: 4px solid #007bff;
+    padding-left: 10px;
 }
-
-.project-item p {
+.accordion-content p, .accordion-content ul {
     font-size: 1em;
-    color: #666;
-    margin-bottom: 20px;
-    flex-grow: 1;
+    color: #555;
 }
 
 .project-link {
@@ -307,5 +382,18 @@ a:hover {
     }
     .skills-grid, .project-grid {
         grid-template-columns: 1fr;
+    }
+    .accordion-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .tech-summary {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    .accordion-header .icon {
+        position: absolute;
+        right: 20px;
+        top: 20px;
     }
 }
