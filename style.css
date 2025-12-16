@@ -127,11 +127,12 @@ a:hover {
     width: 100%;
 }
 
+/* Hero 섹션 공간 축소 */
 .hero {
     background: var(--background-dark);
     text-align: center;
-    padding: 120px 0;
-    min-height: 80vh;
+    padding: 60px 0; /* padding 대폭 축소 */
+    min-height: 60vh; /* min-height 축소 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -263,6 +264,7 @@ a:hover {
 .job-description {
     padding-left: 20px;
     color: var(--text-light);
+    margin-bottom: 30px; /* 프로젝트 아코디언과의 간격 확보 */
 }
 
 .job-description li {
@@ -273,10 +275,12 @@ a:hover {
     padding-left: 5px;
 }
 
+/* 아코디언 (프로젝트) 스타일 */
 .accordion-item {
+    /* experience-item 내부에서 간격 조정 */
+    margin-top: 15px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    margin-bottom: 20px;
     overflow: hidden;
     box-shadow: var(--shadow-dark);
 }
@@ -341,11 +345,8 @@ a:hover {
     border-top: 1px solid var(--border-color);
 }
 
-.accordion-content[aria-expanded="true"] {
-    max-height: 2000px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
+/* JS로 aria-expanded="true"가 설정될 때 maxHeight가 scrollHeight로 설정되어야 함 */
+/* CSS는 max-height: 0; 상태만 제어 */
 
 .accordion-content h4 {
     color: var(--primary-color);
@@ -365,26 +366,19 @@ a:hover {
     margin-bottom: 10px;
 }
 
-.project-link {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--background-dark);
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 10px;
-    font-weight: 600;
+/* 통합된 프로젝트 제목 */
+.project-summary-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.5em;
+    font-weight: 700;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
 }
 
-.project-link:hover {
-    background-color: #00B3B3;
-    color: var(--background-dark);
-}
 
-.project-link i {
-    margin-left: 8px;
-}
-
+/* Contact & Footer */
 .contact p {
     font-size: 1.2em;
     text-align: center;
