@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이현승_백엔드_경력기술서</title>
     <style>
+        /*
+ * 최종 CSS 코드: 한 페이지 최적화, 영역 없는 리스트형 기본 정보, 버튼 좌우 상단 배치
+ */
         body {
+            /* 폰트 크기 조정 (기본) */
+            font-size: 11pt;
+
             position: relative;
             padding-top: 80px;
 
             font-family: 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', sans-serif;
-            line-height: 1.6;
+            line-height: 1.5;
             color: #333;
             max-width: 850px;
             margin: 40px auto;
@@ -21,6 +27,7 @@
             background-color: #fff;
         }
         h1 {
+            /* absolute로 위치를 고정하여 버튼 아래에 배치 (화면용) */
             position: absolute;
             top: 40px;
             left: 0;
@@ -36,21 +43,24 @@
             color: #333;
             border-left: 5px solid #1a73e8;
             padding-left: 10px;
-            margin-top: 30px;
+            margin-top: 35px;
             margin-bottom: 15px;
+            page-break-inside: avoid;
         }
         h3 {
             color: #1a73e8;
             margin-top: 20px;
             margin-bottom: 5px;
+            page-break-inside: avoid;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            page-break-inside: avoid;
         }
         th, td {
-            padding: 10px;
+            padding: 8px;
             border: 1px solid #ddd;
             text-align: left;
         }
@@ -59,12 +69,68 @@
             width: 150px;
             font-weight: bold;
         }
+
+        /* 1. 기본 정보 리스트 스타일 */
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .info-list li {
+            padding: 5px 0;
+            margin-bottom: 5px;
+            border-bottom: 1px dashed #eee;
+        }
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        .info-list li strong {
+            display: inline;
+            font-weight: bold;
+            color: #1a73e8;
+            margin-right: 10px;
+        }
+
+        /* 4. 프로젝트 리스트 스타일 */
+        .project-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        .project-list li {
+            margin-bottom: 10px; /* 프로젝트 간 간격 최소화 */
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            page-break-inside: avoid;
+        }
+        .project-list .project-title {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 3px;
+        }
+        .project-list .project-tech {
+            font-size: 0.95em;
+            color: #1a73e8;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .project-list .project-role {
+            font-size: 1em;
+            line-height: 1.4;
+            display: block;
+        }
+
+
+        /* 핵심 역량 목록 스타일 */
         .core-competency ul {
             list-style: none;
             padding-left: 0;
+            page-break-inside: avoid;
         }
         .core-competency li {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             padding-left: 20px;
             position: relative;
         }
@@ -76,15 +142,8 @@
             width: 1em;
             margin-left: -1em;
         }
-        .project-table th {
-            width: 20%;
-        }
-        .project-table td:nth-child(2) {
-            width: 25%;
-        }
-        .project-table td:nth-child(3) {
-            text-align: left;
-        }
+
+        /* 연차 표시 스타일 */
         .career-duration {
             font-size: 0.8em;
             font-weight: normal;
@@ -92,9 +151,11 @@
             margin-left: 10px;
         }
 
+        /* --- 버튼 공통 스타일 (화면용) --- */
         .download-btn, .portfolio-btn {
             position: fixed;
             top: 30px;
+
             width: 180px;
             margin: 0;
             padding: 10px;
@@ -107,6 +168,7 @@
             cursor: pointer;
             font-size: 15px;
             font-weight: 600;
+
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
             z-index: 2000;
@@ -118,22 +180,43 @@
             transform: translateY(-1px);
         }
 
+        /* PDF 다운로드 버튼 - 우측 배치 */
         .download-btn {
             right: 50px;
         }
 
+        /* 포트폴리오 버튼 - 좌측 배치 */
         .portfolio-btn {
             left: 50px;
         }
 
+        /* 인쇄 최적화 (PDF) */
         @media print {
             .download-btn, .portfolio-btn {
-                display: none;
+                display: none !important;
             }
+
             body {
                 box-shadow: none;
                 margin: 0;
                 padding: 0;
+                padding: 20px;
+                padding-top: 10px;
+                font-size: 9.5pt;
+                line-height: 1.4;
+            }
+
+            /* 제목 겹침 문제 해결: h1의 absolute 속성 해제 및 위치 재조정 */
+            h1 {
+                position: static;
+                margin-top: 0;
+                margin-bottom: 15px;
+                padding-top: 0;
+            }
+
+            /* 프로젝트 리스트 폰트 조정 */
+            .project-list {
+                font-size: 9.5pt;
             }
         }
     </style>
@@ -146,28 +229,13 @@
 <h1>백엔드 개발자 경력 기술서 (5년차)</h1>
 
 <h2>1. 기본 정보 및 기술 스택</h2>
-<table>
-    <tr>
-        <th>성명</th>
-        <td>이현승</td>
-    </tr>
-    <tr>
-        <th>총 경력</th>
-        <td>4년 9개월 (5년차)</td>
-    </tr>
-    <tr>
-        <th>주요 언어 & 프레임워크</th>
-        <td><strong>Java (Spring Boot)</strong>, Node.js, JavaScript, JPA, MyBatis</td>
-    </tr>
-    <tr>
-        <th>데이터베이스</th>
-        <td>MySQL, MariaDB, PostgreSQL, Oracle, <strong>Redis</strong></td>
-    </tr>
-    <tr>
-        <th>클라우드 & 인프라</th>
-        <td><strong>AWS (Lambda, API Gateway, EC2, Cognito, SES)</strong>, Docker, Jenkins, VPC/NAT Gateway, SFTP, GitLab CI/CD</td>
-    </tr>
-</table>
+<ul class="info-list">
+    <li><strong>성명</strong> 이현승</li>
+    <li><strong>총 경력</strong> 4년 9개월 (5년차)</li>
+    <li><strong>주요 언어 & 프레임워크</strong> <strong>Java (Spring Boot)</strong>, Node.js, JavaScript, JPA, MyBatis</li>
+    <li><strong>데이터베이스</strong> MySQL, MariaDB, PostgreSQL, Oracle, <strong>Redis</strong></li>
+    <li><strong>클라우드 & 인프라</strong> <strong>AWS (Lambda, API Gateway, EC2, Cognito, SES)</strong>, Docker, Jenkins, VPC/NAT Gateway, SFTP, GitLab CI/CD</li>
+</ul>
 
 <h2 class="core-competency">2. 핵심 역량 요약 (Core Competencies)</h2>
 <ul>
@@ -197,72 +265,63 @@
 </div>
 
 <h2>4. 주요 프로젝트 및 성과 (Project Highlights)</h2>
-<table class="project-table">
-    <thead>
-    <tr>
-        <th>프로젝트명</th>
-        <th>기술 스택</th>
-        <th>핵심 역할 및 성과</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td><strong>세종 분석원 - 입찰 AI 시스템</strong></td>
-        <td>Spring Boot, Docker, Jenkins</td>
-        <td><strong>AI 분석 데이터 기반 통계 로직</strong> 구현. <strong>Docker/Jenkins/EC2</strong> 기반 <strong>CI/CD 파이프라인</strong> 구축 및 운영. 50ms 이내 평균 응답 시간 달성.</td>
-    </tr>
-    <tr>
-        <td><strong>레드캡 투어 - 차량 발주 시스템</strong></td>
-        <td>Node.js, AWS Lambda/VPC/SFTP</td>
-        <td><strong>AWS 서버리스 아키텍처</strong> 설계. VPC/NAT Gateway를 통한 <strong>내부망 DB/NAS (SFTP) 연동</strong>. <strong>Cognito/JWT 이중 인증</strong> 및 다단계 권한 제어.</td>
-    </tr>
-    <tr>
-        <td><strong>도로 교통 공사 - EXPD 프로그램</strong></td>
-        <td>Electron, JS, 공학 계산</td>
-        <td>네트워크 독립형 설치 앱 백엔드 개발. 복잡한 공학 계산 로직 구현 및 <strong>검증 결과 100% 일치</strong> 달성하여 시스템 신뢰도 입증.</td>
-    </tr>
-    <tr>
-        <td><strong>라오스 ODA 강의 플랫폼 고도화</strong></td>
-        <td>Spring Boot, 미디어/해외 인프라</td>
-        <td><strong>해외 서버 구축 및 인프라</strong> 관리. 대용량 동영상 <strong>Chunked Upload</strong> 및 <strong>Youtube Live API 연동</strong>으로 업로드 실패율 90% 감소.</td>
-    </tr>
-    <tr>
-        <td><strong>치매 노인 실종 추적 시스템</strong></td>
-        <td>Spring Boot, 보안/권한 체계</td>
-        <td>Spring Security 기반 <strong>다중 사용자 차등 접근 권한</strong> 체계 구현. <strong>QR 코드 연동 모바일 API</strong> 및 실시간 알림 모듈 구축.</td>
-    </tr>
-    <tr>
-        <td><strong>교육청 장비 유지관리 시스템</strong></td>
-        <td>Spring Boot, 이중 보안/DB 혼용</td>
-        <td><strong>IP 기반 망 분리 이중 로그인</strong> 정책 적용. <strong>JPA/MyBatis 혼용</strong> 전략으로 레거시 데이터 접근 유연성 확보.</td>
-    </tr>
-    <tr>
-        <td><strong>콩쿨링크 공연 참여 신청 서비스</strong></td>
-        <td>Spring Boot, 결제/대용량 파일</td>
-        <td><strong>Toss Pay 결제 모듈 전환</strong> 및 트랜잭션 로직 구현. 대용량 접수 데이터 및 음원 파일 <strong>ZIP/Excel 처리 기능</strong> 제공.</td>
-    </tr>
-    <tr>
-        <td><strong>한국 물기술 연구 서비스 고도화</strong></td>
-        <td>Spring Boot, 성능 최적화 리딩</td>
-        <td>고객 업무 로직 고도화 주도. <strong>MySQL 쿼리 튜닝</strong>으로 복잡한 조회 시 응답 시간 <strong>70% 이상 단축</strong>.</td>
-    </tr>
-    <tr>
-        <td><strong>도산서원 예약 플랫폼</strong></td>
-        <td>Spring Boot, 배치/권한 관리</td>
-        <td><strong>Spring Security</strong> 기반 세분화된 권한별 접근 제어. <strong>Spring Batch</strong>를 활용한 정산 및 통계 업무 자동화.</td>
-    </tr>
-    <tr>
-        <td><strong>하나 하이텍 MES 시스템 개발</strong></td>
-        <td>Spring Boot, MES/데이터 정합성</td>
-        <td>레거시 시스템 재구축. Mybatis를 활용하여 대규모 생산 트랜잭션의 <strong>데이터 정합성 확보</strong> 및 실시간 반영률 30% 향상.</td>
-    </tr>
-    <tr>
-        <td><strong>도서 관리 서비스 백엔드 개발</strong></td>
-        <td>Spring Boot, 통계/JPA</td>
-        <td>JPA 기반 데이터 모델링. <strong>통계 쿼리 최적화</strong>를 통해 쿼리 응답 시간 <strong>90% 이상 단축</strong> (85ms 이내 유지).</td>
-    </tr>
-    </tbody>
-</table>
+<ul class="project-list">
+    <li>
+        <span class="project-title">세종 분석원 - 입찰 AI 시스템</span>
+        <span class="project-tech">기술 스택: Spring Boot, Docker, Jenkins</span>
+        <span class="project-role"><strong>AI 분석 데이터 기반 통계 로직</strong> 구현. <strong>Docker/Jenkins/EC2</strong> 기반 <strong>CI/CD 파이프라인</strong> 구축 및 운영. 50ms 이내 평균 응답 시간 달성.</span>
+    </li>
+    <li>
+        <span class="project-title">레드캡 투어 - 차량 발주 시스템</span>
+        <span class="project-tech">기술 스택: Node.js, AWS Lambda/VPC/SFTP</span>
+        <span class="project-role"><strong>AWS 서버리스 아키텍처</strong> 설계. VPC/NAT Gateway를 통한 <strong>내부망 DB/NAS (SFTP) 연동</strong>. <strong>Cognito/JWT 이중 인증</strong> 및 다단계 권한 제어.</span>
+    </li>
+    <li>
+        <span class="project-title">도로 교통 공사 - EXPD 프로그램</span>
+        <span class="project-tech">기술 스택: Electron, JS, 공학 계산</span>
+        <span class="project-role">네트워크 독립형 설치 앱 백엔드 개발. 복잡한 공학 계산 로직 구현 및 <strong>검증 결과 100% 일치</strong> 달성하여 시스템 신뢰도 입증.</span>
+    </li>
+    <li>
+        <span class="project-title">라오스 ODA 강의 플랫폼 고도화</span>
+        <span class="project-tech">기술 스택: Spring Boot, 미디어/해외 인프라</span>
+        <span class="project-role"><strong>해외 서버 구축 및 인프라</strong> 관리. 대용량 동영상 <strong>Chunked Upload</strong> 및 <strong>Youtube Live API 연동</strong>으로 업로드 실패율 90% 감소.</span>
+    </li>
+    <li>
+        <span class="project-title">치매 노인 실종 추적 시스템</span>
+        <span class="project-tech">기술 스택: Spring Boot, 보안/권한 체계</span>
+        <span class="project-role">Spring Security 기반 <strong>다중 사용자 차등 접근 권한</strong> 체계 구현. <strong>QR 코드 연동 모바일 API</strong> 및 실시간 알림 모듈 구축.</span>
+    </li>
+    <li>
+        <span class="project-title">교육청 장비 유지관리 시스템</span>
+        <span class="project-tech">기술 스택: Spring Boot, 이중 보안/DB 혼용</span>
+        <span class="project-role"><strong>IP 기반 망 분리 이중 로그인</strong> 정책 적용. <strong>JPA/MyBatis 혼용</strong> 전략으로 레거시 데이터 접근 유연성 확보.</span>
+    </li>
+    <li>
+        <span class="project-title">콩쿨링크 공연 참여 신청 서비스</span>
+        <span class="project-tech">기술 스택: Spring Boot, 결제/대용량 파일</span>
+        <span class="project-role"><strong>Toss Pay 결제 모듈 전환</strong> 및 트랜잭션 로직 구현. 대용량 접수 데이터 및 음원 파일 <strong>ZIP/Excel 처리 기능</strong> 제공.</span>
+    </li>
+    <li>
+        <span class="project-title">한국 물기술 연구 서비스 고도화</span>
+        <span class="project-tech">기술 스택: Spring Boot, 성능 최적화 리딩</span>
+        <span class="project-role">고객 업무 로직 고도화 주도. <strong>MySQL 쿼리 튜닝</strong>으로 복잡한 조회 시 응답 시간 <strong>70% 이상 단축</strong>.</span>
+    </li>
+    <li>
+        <span class="project-title">도산서원 예약 플랫폼</span>
+        <span class="project-tech">기술 스택: Spring Boot, 배치/권한 관리</span>
+        <span class="project-role"><strong>Spring Security</strong> 기반 세분화된 권한별 접근 제어. <strong>Spring Batch</strong>를 활용한 정산 및 통계 업무 자동화.</span>
+    </li>
+    <li>
+        <span class="project-title">하나 하이텍 MES 시스템 개발</span>
+        <span class="project-tech">기술 스택: Spring Boot, MES/데이터 정합성</span>
+        <span class="project-role">레거시 시스템 재구축. Mybatis를 활용하여 대규모 생산 트랜잭션의 <strong>데이터 정합성 확보</strong> 및 실시간 반영률 30% 향상.</span>
+    </li>
+    <li>
+        <span class="project-title">도서 관리 서비스 백엔드 개발</span>
+        <span class="project-tech">기술 스택: Spring Boot, 통계/JPA</span>
+        <span class="project-role">JPA 기반 데이터 모델링. <strong>통계 쿼리 최적화</strong>를 통해 쿼리 응답 시간 <strong>90% 이상 단축</strong> (85ms 이내 유지).</span>
+    </li>
+</ul>
 
 </body>
 </html>
