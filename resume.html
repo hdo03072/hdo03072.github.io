@@ -5,37 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이현승_백엔드_경력기술서</title>
     <style>
-        /*
- * 최종 CSS 코드: 버튼 좌우 상단 배치, 제목 안 가림 보장
- */
         body {
-            /* position: relative를 유지하되, 버튼이 제목과 겹치지 않도록 충분한 상단 패딩 부여 */
             position: relative;
-            padding-top: 80px; /* 제목과 버튼 영역을 확보하기 위해 상단 패딩 증가 */
+            padding-top: 80px;
 
             font-family: 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', sans-serif;
             line-height: 1.6;
             color: #333;
             max-width: 850px;
             margin: 40px auto;
-            padding-left: 20px; /* 좌우 패딩 유지 */
+            padding-left: 20px;
             padding-right: 20px;
             padding-bottom: 20px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             background-color: #fff;
         }
         h1 {
-            /* absolute로 위치를 고정하여 버튼 아래에 배치 */
             position: absolute;
-            top: 40px; /* body 상단 패딩과 맞추어 제목 위치 조정 */
+            top: 40px;
             left: 0;
             right: 0;
 
             text-align: center;
-            color: #1a73e8; /* 메인 색상 */
+            color: #1a73e8;
             border-bottom: 3px solid #1a73e8;
             padding-bottom: 10px;
-            margin: 0 20px 30px 20px; /* 좌우 마진은 본문 컨테이너에 맞게 조정 */
+            margin: 0 20px 30px 20px;
         }
         h2 {
             color: #333;
@@ -64,7 +59,6 @@
             width: 150px;
             font-weight: bold;
         }
-        /* 핵심 역량 목록 스타일 */
         .core-competency ul {
             list-style: none;
             padding-left: 0;
@@ -82,7 +76,6 @@
             width: 1em;
             margin-left: -1em;
         }
-        /* 프로젝트 테이블 스타일 */
         .project-table th {
             width: 20%;
         }
@@ -92,7 +85,6 @@
         .project-table td:nth-child(3) {
             text-align: left;
         }
-        /* 연차 표시 스타일 */
         .career-duration {
             font-size: 0.8em;
             font-weight: normal;
@@ -100,12 +92,9 @@
             margin-left: 10px;
         }
 
-        /* --- 버튼 공통 스타일 --- */
         .download-btn, .portfolio-btn {
-            position: fixed; /* 뷰포트를 기준으로 위치 고정 */
+            position: fixed;
             top: 30px;
-
-            /* 공통 디자인 */
             width: 180px;
             margin: 0;
             padding: 10px;
@@ -118,7 +107,6 @@
             cursor: pointer;
             font-size: 15px;
             font-weight: 600;
-
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
             z-index: 2000;
@@ -130,17 +118,14 @@
             transform: translateY(-1px);
         }
 
-        /* PDF 다운로드 버튼 - 우측 배치 */
         .download-btn {
             right: 50px;
         }
 
-        /* 포트폴리오 버튼 - 좌측 배치 */
         .portfolio-btn {
             left: 50px;
         }
 
-        /* 프린트 시 버튼 숨김 */
         @media print {
             .download-btn, .portfolio-btn {
                 display: none;
