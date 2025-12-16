@@ -1,4 +1,35 @@
+function calculateCareerYear() {
+    // 경력 시작일: 2021년 3월 1일
+    const startDate = new Date('2021-03-01');
+    const today = new Date();
+
+    // 총 경력 월수 계산 (날짜 객체 이용)
+    let years = today.getFullYear() - startDate.getFullYear();
+    let months = today.getMonth() - startDate.getMonth();
+
+    // 현재 날짜의 월이 시작 월보다 작거나, 같은 월이라도 날짜가 시작 날짜보다 작으면 1년차 감소 (만 나이 계산)
+    if (months < 0 || (months === 0 && today.getDate() < startDate.getDate())) {
+        years--;
+        months += 12;
+    }
+
+    // 총 월수 계산 (연차 계산을 위해)
+    const totalMonths = years * 12 + months;
+
+    // N년차 계산 (4년 9개월 -> 5년차로 계산되도록)
+    const careerYear = Math.floor(totalMonths / 12) + 1;
+
+    return `주요 경력 (2021.03 ~ 현재 [${careerYear}년차])`;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+
+    // --- Career Duration Calculation and Injection ---
+    const durationElement = document.getElementById('duration');
+    if (durationElement) {
+        durationElement.textContent = calculateCareerYear();
+    }
+
 
     // --- Smooth Scrolling and Navigation Active State ---
 
