@@ -154,6 +154,64 @@
 
                 <h4 class="project-summary-title">주요 프로젝트</h4>
 
+<!--                <div class="accordion-item">-->
+<!--                    <button class="accordion-header" aria-expanded="false" data-target="project0">-->
+<!--                        <h3>가나안 - 메일 수신 및 전처리 시스템</h3>-->
+<!--                        <span class="tech-summary">기술: Node.js, PostgreSQL, IMAP, Puppeteer</span>-->
+<!--                        <span class="icon fas fa-chevron-down"></span>-->
+<!--                    </button>-->
+<!--                    <div class="accordion-content" id="project0">-->
+<!--                        <h4>프로젝트 기간</h4>-->
+<!--                        <p>2025.11 ~ 현재</p>-->
+<!--                        <h4>프로젝트 팀 구성</h4>-->
+<!--                        <p>백엔드 개발 (메일 수신 및 파일 처리 파이프라인 담당)</p>-->
+<!--                        <h4>[1] 프로젝트 개요 및 목표</h4>-->
+<!--                        <p>입찰 관련 메일을 IMAP 프로토콜을 통해 자동으로 수신하고, 다양한 형태(HTML 본문, 보안 PDF, FAX 등)의 첨부파일을 추출하여 표준화된 PDF 포맷으로 변환·저장하는 자동화 시스템 구축. 후속 OCR 분석을 위한 고품질의 원천 데이터를 확보하는 것이 핵심 목표입니다.</p>-->
+<!--                        <h4>[2] 주요 역할 및 기술 적용</h4>-->
+<!--                        <ul>-->
+<!--                            <li><b>메일 수집 자동화</b>: Node.js의 <code>imap</code> 라이브러리를 활용하여 메일 서버를 주기적으로 폴링하고, 화이트리스트(DB)에 등록된 송신자의 메일만 선별적으로 수집하여 보안성과 효율성을 확보함.</li>-->
+<!--                            <li><b>문서 변환 파이프라인</b>: <code>Puppeteer</code> 및 커스텀 로직을 적용하여 HTML 본문 캡처, 암호화된 PDF 해제, FAX 이미지 변환 등 다양한 문서 유형을 단일 PDF 포맷으로 표준화하는 로직을 구현함.</li>-->
+<!--                            <li><b>데이터 무결성 및 이력 관리</b>: PostgreSQL을 사용하여 메일 UID 기반의 중복 수신 방지 로직을 구현하고, 수신부터 변환까지의 전 과정을 상세히 로깅하여 추적 가능성을 확보함.</li>-->
+<!--                            <li><b>파일 시스템 최적화</b>: 수신된 원본 및 변환 파일을 날짜별, 처리 상태별(성공/실패/오류) 디렉토리로 자동 분류하여 저장하고 관리하는 파일 시스템 아키텍처를 설계함.</li>-->
+<!--                        </ul>-->
+<!--                        <h4>[3] 결과 및 성과</h4>-->
+<!--                        <p>수작업으로 진행되던 입찰 문서 수집 및 분류 과정을 100% 자동화하여 업무 효율을 극대화함. 특히 암호화된 보안 메일의 자동 처리 및 다양한 포맷의 표준화를 통해 데이터 누락 없는 안정적인 데이터 파이프라인을 구축함.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" data-target="project0">
+                        <h3>가나안 - 메일 OCR 및 입찰 데이터 통합 시스템</h3>
+                        <span class="tech-summary">기술: Node.js, Javascript, Spring Boot, Java, Mybatis, PostgreSQL</span>
+                        <span class="icon fas fa-chevron-down"></span>
+                    </button>
+                    <div class="accordion-content" id="project0">
+                        <h4>프로젝트 기간</h4>
+                        <p>2026.01 ~ 현재</p>
+                        <h4>프로젝트 팀 구성</h4>
+                        <p>백엔드 2명 | PM: 1명</p>
+                        <h4>[1] 프로젝트 개요 및 목표</h4>
+                        <p>
+                            Archive(Node.js): 입찰 관련 메일을 IMAP 프로토콜을 통해 자동으로 수신하고, 다양한 형태(HTML 본문, PDF, FAX 등)의 첨부파일을 추출하여 표준화된 PDF 포맷으로 변환 및 저장하는 자동화 시스템이며, 후속 OCR 분석을 위한 고품질 원천 데이터를 확보하는 것이 목표입니다.<br>
+                            Aggregator(Spring Boot): Archive에서 확보된 데이터를 AI 모델이 1차 분석하면, 그 원시 데이터를 배치 시스템을 통해 자동으로 수집하고 표준화된 스키마로 정제·적재하여, 최종적으로 입찰 전략 수립을 위한 고속 통계 분석 데이터를 제공하는 것이 목표입니다.
+                        </p>
+                        <h4>[2] 주요 역할 및 기술 적용</h4>
+                        <ul>
+                            <li><b>메일 수집 자동화</b>: Node.js의 <code>imap</code> 라이브러리를 활용하여 메일 서버를 주기적으로 폴링하고, 화이트리스트(DB)에 등록된 송신자의 메일만 선별적으로 수집하여 보안성과 효율성을 확보함.</li>
+                            <li><b>문서 변환 파이프라인</b>: <code>Puppeteer</code> 및 커스텀 로직을 적용하여 HTML 본문 캡처, 암호화된 PDF 해제, FAX 이미지 변환 등 다양한 문서 유형을 단일 PDF 포맷으로 표준화하는 로직을 구현함.</li>
+                            <li><b>데이터 무결성 및 이력 관리</b>: PostgreSQL을 사용하여 메일 UID 기반의 중복 수신 방지 로직을 구현하고, 수신부터 변환까지의 전 과정을 상세히 로깅하여 추적 가능성을 확보함.</li>
+                            <li><b>파일 시스템 최적화</b>: 수신된 원본 및 변환 파일을 날짜별, 처리 상태별(성공/실패/오류) 디렉토리로 자동 분류하여 저장하고 관리하는 파일 시스템 아키텍처를 설계함.</li>
+
+                            <li><b>배치 프로세스 자동화</b>: Spring Boot와 <code>Quartz Scheduler</code>를 활용하여 AI 분석 결과 파일을 주기적으로 스캔하고, 운영(DB 트랜잭션 기반)과 개발(파일 시스템 기반) 환경에 최적화된 이원화된 처리 로직을 구현함.</li>
+                            <li><b>OCR 데이터 후처리 및 표준화</b>: <code>Factory Pattern</code>을 적용하여 은행별로 상이한 OCR 결과 포맷을 유연하게 처리할 수 있는 확장 구조를 설계하고, 비정형 데이터를 표준화된 스키마로 변환하여 데이터 정합성을 확보함.</li>
+                            <li><b>파일 시스템 생명주기 관리</b>: 파일 처리 단계를 4단계(Incoming/Processing/Processed/Error)로 격리하고, 중복 파일 자동 리네이밍 및 트랜잭션 롤백 처리를 통해 데이터 유실 없는 안정적인 파이프라인을 구축함.</li>
+                            <li><b>처리 이력 및 예외 추적</b>: PostgreSQL을 사용하여 파일 단위의 처리 상태(성공/실패)와 에러 로그를 상세히 기록하고, 실패 시 원인을 즉각 파악할 수 있는 모니터링 기반을 마련함.</li>
+                        </ul>
+                        <h4>[3] 결과 및 성과</h4>
+                        <p>수작업으로 진행되던 입찰 문서 수집부터 OCR 데이터 후처리 및 적재에 이르는 전 과정을 100% 자동화하여 업무 효율을 극대화함. 특히 보안 메일 처리 및 포맷 표준화를 통해 누락 없는 데이터 파이프라인을 구축하였으며, Factory 패턴 기반의 모듈화 설계로 신규 은행 대응 시간을 50% 이상 단축시킴과 동시에 Quartz 배치와 상세 로깅 시스템을 도입하여 데이터 누락률 0%의 운영 안정성을 확보함.</p>
+                    </div>
+                </div>
+
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false" data-target="project1">
                         <h3>세종 분석 연구원 - 입찰 AI 시스템 백엔드 개발</h3>
@@ -162,7 +220,7 @@
                     </button>
                     <div class="accordion-content" id="project1">
                         <h4>프로젝트 기간</h4>
-                        <p>2025.11 ~ 현재</p>
+                        <p>2025.11 ~ 2026.03</p>
                         <h4>프로젝트 팀 구성</h4>
                         <p>AI: 2명 | 프론트엔드: 1명 | 백엔드 1명 (백엔드 메인 개발 담당) | PM: 1명</p>
                         <h4>[1] 프로젝트 개요 및 목표</h4>
