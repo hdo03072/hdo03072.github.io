@@ -190,7 +190,7 @@
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false" data-target="project1">
                         <h3>세종 분석 연구원 - 입찰 AI 시스템 백엔드 개발</h3>
-                        <span class="tech-summary">기술: Spring Boot, Java, MyBatis, MySQL</span>
+                        <span class="tech-summary">기술: Spring Boot, Java, MyBatis, MySQL, AWS EC2, Docker</span>
                         <span class="icon fas fa-chevron-down"></span>
                     </button>
                     <div class="accordion-content" id="project1">
@@ -205,7 +205,7 @@
                             <li><b>AI 데이터 처리 및 통계</b>: AI 팀이 MySQL에 저장한 원시 데이터를 Spring Boot에서 조회하여, 복잡한 통계 로직(분포, 예측치 등)을 구현하고 결과를 화면에 제공하는 API를 개발함.</li>
                             <li><b>성능 최적화</b>: 통계 데이터 조회 속도 향상을 위해 MyBatis를 활용한 SQL 쿼리 튜닝 및 MySQL 인덱싱 전략을 적용하여, 데이터 처리 성능을 최적화함.</li>
                             <li><b>보안 및 권한 관리</b>: JWT 기반의 인증 시스템을 구축하고, 사용자 역할(유저, 관리자, 분석사)에 따라 접근 가능한 통계 및 관리 기능에 대한 권한 제어 로직을 견고하게 구현함.</li>
-                            <li><b>CI/CD 및 배포 자동화</b>: Docker를 사용하여 애플리케이션을 컨테이너화하고, Jenkins를 통한 자동 빌드 및 AWS EC2 환경으로의 배포 파이프라인을 구축하여 개발/운영 환경의 일관성 및 배포 속도를 확보함.</li>
+                            <li><b>배포 자동화 파이프라인 설계</b>: 로컬 빌드 후 S3 업로드, SCP 및 Shell 스크립트를 이용한 서버 전송 및 Docker 컨테이너 재실행 프로세스를 자동화하여 배포 오류를 방지하고 운영 효율성을 개선함.</li>
                         </ul>
                         <h4>[3] 결과 및 성과</h4>
                         <p>AI 분석 결과에 기반한 통계 데이터 조회 API의 평균 응답 시간을 50ms 이내로 단축하여 사용자 경험을 개선함. Docker 및 Jenkins 기반 CI/CD 구축을 통해 배포 오류율을 낮추고, AI 모델 업데이트에 따른 백엔드 배포 시간을 단축하여 운영 효율성을 크게 향상시킴.</p>
